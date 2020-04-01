@@ -39,5 +39,5 @@ Output would be
 ## Support for different categories
 
 The Application is designed in such a way that it can be extended to support 
-different categories with minimal code, provided that average cubic weight 
-calculation remains the same.
+different categories. Either same calculation logic can be used or the existing
+logic can be overridden.

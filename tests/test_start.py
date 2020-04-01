@@ -40,7 +40,7 @@ class StartScriptTest(unittest.TestCase):
         self.mock_input.side_effect = [0]
         self.mock_ac.return_value = 2
         start.get_started()
-        self.assertIn('Invalid choice', self.mock_print.getvalue())
+        self.assertIn('Category implementation does not exist', self.mock_print.getvalue())
 
     def test_get_started_invalid_data(self):
 

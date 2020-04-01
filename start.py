@@ -2,7 +2,7 @@ from air_conditioners import CalculateAirconditionerWeight
 from config import PRODUCTS, AIR_CONDITIONERS
 from custom_exception import CalculatorException
 
-# Can be extended to N products
+# Can be extended to support N categories
 CATEGORY_FUNCTION = {
         AIR_CONDITIONERS: CalculateAirconditionerWeight,
     }
@@ -17,11 +17,11 @@ def get_started():
         print('{}. {}'.format(counter, product))
 
     try:
-        option = int(input('Enter product number [strictly numeric value]\n'))
+        option = int(input('Enter product number [strictly numeric]\n'))
 
         func = CATEGORY_FUNCTION.get(option-1)
         if not func:
-            raise CalculatorException('Invalid choice')
+            raise CalculatorException('Category implementation does not exist')
 
         weight = func().get_avg_weight()
         if weight == 0:
@@ -34,10 +34,10 @@ def get_started():
         print('Sorry, Invalid choice')
 
     except CalculatorException as ex:
-        print('Application failed: {}'.format(ex))
+        print('Application error: {}'.format(str(ex)))
 
     except Exception as ex:
-        print('Application failed: {}'.format(str(ex)))
+        print('Application error: {}'.format(str(ex)))
 
 
 if __name__ == '__main__':
