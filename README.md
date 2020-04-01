@@ -24,7 +24,7 @@ Above command shows the following interface
 
 >Enter product number [strictly numeric value]
 
-User has to enter the product number from the list else application will fail
+User has to enter the product number from the above options else application will fail
 >1
 
 Output would be
