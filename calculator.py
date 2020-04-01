@@ -1,7 +1,7 @@
 import requests
 from config import ROOT_API, FIRST_PAGE
 from custom_exception import CalculatorException
-
+from http import HTTPStatus
 
 class CalculateCategoryWeight(object):
 
@@ -12,7 +12,7 @@ class CalculateCategoryWeight(object):
 
     def read_data(self, response):
 
-        if response.status_code != 200:
+        if response.status_code != HTTPStatus.OK:
             raise CalculatorException('API to fetch data failed with status_code: {}'.format(response.status_code))
 
         data = response.json()
